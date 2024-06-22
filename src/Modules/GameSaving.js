@@ -12,8 +12,8 @@ export default class GameSaving {
     }
 
     get count() {
-        this.#count += 1;
-        return this.#count;
+        GameSaving.#count += 1;
+        return GameSaving.#count;
     }
 }
 

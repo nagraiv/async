@@ -17,6 +17,12 @@ export default [
     files: ["**/*.test.js"],
     languageOptions: {
       globals: globals.jest
-    }
+    },
   },
+  {
+    files: ["**/*.js"],
+    rules: {
+      'no-unused-vars': 'off',
+    },
+  }
 ];

@@ -8,6 +8,12 @@ export default class GameSavingLoader {
             .then(buffer => json(buffer))
             .then(str => JSON.parse(str))
             .then(result => Array.isArray(result) ? result.map(transform) : transform(result))
-            .catch(e => console.log('Something went wrong...\n', e.message));
+            .catch(e => {
+                console.log('Something went wrong...\n', e.message);
+                return {
+                    success: false,
+                    error: e.message,
+                }
+            });
     }
 }
